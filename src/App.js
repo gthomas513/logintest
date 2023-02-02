@@ -5,12 +5,6 @@ import { useStytch } from '@stytch/react';
 export const Login = () => {
   const stytchClient = useStytch();
 
-  const sendEmailMagicLink = () => {
-    stytchClient.magicLinks.email.send('gabe.thomas513@gmail.com', {
-      login_magic_link_url: 'http:localhost:3000',
-      login_expiration_minutes: 5,
-    });
-  };
               
   const config = {
   "products": [
