@@ -18,6 +18,7 @@ export const Login = () => {
     "emailMagicLinks",
     "otp"
   ],
+  
   "emailMagicLinksOptions": {
     "loginRedirectURL": "http://localhost:3000",
     "loginExpirationMinutes": 30,
@@ -70,7 +71,7 @@ export const Login = () => {
   }
 }
                             
-  return <StytchLogin className="box12" config={config} styles={styles} />;
+  return <StytchLogin config={config} styles={styles} />;
 }
               
 export default Login;
