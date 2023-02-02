@@ -1,10 +1,17 @@
 import React from 'react';
 import { StytchLogin } from '@stytch/react';
 import { useStytch } from '@stytch/react';
+import './App.css'
 
 export const Login = () => {
   const stytchClient = useStytch();
 
+  const sendEmailMagicLink = () => {
+    stytchClient.magicLinks.email.send('gabe.thomas513@gmail.com', {
+      login_magic_link_url: 'http:localhost:3000',
+      login_expiration_minutes: 5,
+    });
+  };
               
   const config = {
   "products": [
@@ -30,14 +37,16 @@ export const Login = () => {
     "backgroundColor": "#FFFFFF",
     "borderColor": "#ADBCC5",
     "borderRadius": "8px",
-    "width": "400px"
+    "width": "400px",
   },
+
   "colors": {
     "primary": "#19303D",
     "secondary": "#5C727D",
     "success": "#0C5A56",
     "error": "#8B1214"
   },
+  
   "buttons": {
     "primary": {
       "backgroundColor": "#19303D",
@@ -45,12 +54,14 @@ export const Login = () => {
       "borderColor": "#19303D",
       "borderRadius": "4px"
     },
+
     "secondary": {
       "backgroundColor": "#FFFFFF",
       "textColor": "#19303D",
       "borderColor": "#19303D",
       "borderRadius": "4px"
     }
+
   },
   "fontFamily": "Arial",
   "hideHeaderText": false,
@@ -59,7 +70,7 @@ export const Login = () => {
   }
 }
                             
-  return <StytchLogin config={config} styles={styles} />;
+  return <StytchLogin className="box12" config={config} styles={styles} />;
 }
               
 export default Login;
